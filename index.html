@@ -16,6 +16,8 @@
       --background: #0a192f;
       --card-bg: #112240;
       --border: #1e3a5f;
+      --highlight: rgba(0, 204, 255, 0.1);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
     * {
@@ -44,42 +46,32 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: rgba(10, 25, 47, 0.9);
+      background-color: rgba(10, 25, 47, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(30, 58, 95, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .logo img {
-      height: 40px;
-      width: auto;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
     .nav-links a {
       color: var(--text);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
       position: relative;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      padding: 0.5rem 0;
     }
 
     .nav-links a:hover {
@@ -91,10 +83,10 @@
       position: absolute;
       width: 0;
       height: 2px;
-      bottom: -4px;
+      bottom: 0;
       left: 0;
       background-color: var(--primary);
-      transition: width 0.3s;
+      transition: width 0.3s ease;
     }
 
     .nav-links a:hover::after {
@@ -117,6 +109,7 @@
       align-items: center;
       position: relative;
       overflow: hidden;
+      padding: 4rem 0;
     }
 
     .hero-content {
@@ -127,52 +120,67 @@
     .hero-subtitle {
       color: var(--primary);
       font-size: 1.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       display: block;
+      font-weight: 500;
+      letter-spacing: 1px;
+      animation: fadeInUp 0.8s ease;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 4.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      line-height: 1.2;
+      line-height: 1.1;
+      animation: fadeInUp 1s ease;
+      background: linear-gradient(to right, var(--text), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .hero h2 {
       font-size: 2.5rem;
       color: var(--text-secondary);
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.2s ease;
     }
 
     .hero-description {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-secondary);
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       max-width: 600px;
+      line-height: 1.8;
+      animation: fadeInUp 1.4s ease;
     }
 
     .contact-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 1.8rem;
+      margin-top: 2.5rem;
+      animation: fadeInUp 1.6s ease;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
       color: var(--text-secondary);
-      transition: color 0.3s;
+      transition: transform 0.3s, color 0.3s;
     }
 
     .contact-item:hover {
       color: var(--primary);
+      transform: translateY(-3px);
     }
 
     .contact-item i {
       color: var(--primary);
+      font-size: 1.2rem;
     }
 
     .contact-item a {
@@ -180,22 +188,48 @@
       text-decoration: none;
     }
 
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      animation: fadeInUp 1.8s ease;
+    }
+
     .btn {
       display: inline-block;
       background-color: transparent;
       color: var(--primary);
       border: 1px solid var(--primary);
-      padding: 0.8rem 1.5rem;
+      padding: 0.9rem 1.8rem;
       border-radius: 4px;
       font-weight: 500;
       text-decoration: none;
       transition: all 0.3s;
       cursor: pointer;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: var(--primary);
+      transition: all 0.3s;
+      z-index: -1;
     }
 
     .btn:hover {
-      background-color: rgba(0, 204, 255, 0.1);
-      transform: translateY(-3px);
+      color: var(--secondary);
+    }
+
+    .btn:hover::before {
+      width: 100%;
     }
 
     .btn-primary {
@@ -203,8 +237,19 @@
       color: var(--secondary);
     }
 
-    .btn-primary:hover {
+    .btn-primary::before {
       background-color: var(--primary-dark);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* About Section */
@@ -213,8 +258,8 @@
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 3rem;
+      font-size: 2.2rem;
+      margin-bottom: 3.5rem;
       display: flex;
       align-items: center;
       position: relative;
@@ -225,12 +270,25 @@
       flex: 1;
       height: 1px;
       background-color: var(--border);
-      margin-left: 1rem;
+      margin-left: 1.5rem;
+      opacity: 0.7;
     }
 
     .section-title span {
       color: var(--primary);
-      margin-right: 0.5rem;
+      margin-right: 0.8rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    .about-content {
+      max-width: 800px;
+      line-height: 1.8;
+    }
+
+    .about-content p {
+      margin-bottom: 1.8rem;
+      color: var(--text-secondary);
     }
 
     /* Experience Section */
@@ -256,7 +314,7 @@
       position: relative;
       width: 50%;
       box-sizing: border-box;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .timeline-item::after {
@@ -268,6 +326,7 @@
       border-radius: 50%;
       top: 15px;
       z-index: 1;
+      box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
     }
 
     .left {
@@ -287,77 +346,94 @@
     }
 
     .timeline-content {
-      padding: 1.5rem;
+      padding: 1.8rem;
       background-color: var(--card-bg);
       border-radius: 8px;
       border: 1px solid var(--border);
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .timeline-content:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow);
     }
 
     .timeline-date {
       color: var(--primary);
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
       display: block;
+      font-size: 1rem;
     }
 
     .timeline-title {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       margin-bottom: 0.5rem;
+      color: var(--text);
     }
 
     .timeline-subtitle {
       color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      font-style: italic;
     }
 
     .timeline-description {
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-secondary);
+    }
+
+    .timeline-description li {
+      margin-bottom: 0.8rem;
+      list-style-position: inside;
     }
 
     .skills-used {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
     }
 
     .skill-tag {
-      background-color: rgba(0, 204, 255, 0.1);
+      background-color: var(--highlight);
       color: var(--primary);
-      padding: 0.3rem 0.6rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 4px;
       font-size: 0.8rem;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      background-color: rgba(0, 204, 255, 0.2);
     }
 
     /* Projects Section */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
     .project-card {
       background-color: var(--card-bg);
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid var(--border);
-      padding: 1.5rem;
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 1.8rem;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       height: 100%;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
       border-color: var(--primary);
     }
 
@@ -365,74 +441,96 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .project-icon {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--primary);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover .project-icon {
+      transform: scale(1.1);
     }
 
     .project-title {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      color: var(--text);
+      letter-spacing: 0.5px;
     }
 
     .project-description {
       color: var(--text-secondary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
       flex-grow: 1;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .project-description ul {
+      padding-left: 1.2rem;
+    }
+
+    .project-description li {
+      margin-bottom: 0.8rem;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.6rem;
       margin-top: auto;
     }
 
     .project-links {
       display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
     }
 
     .project-links a {
       color: var(--text-secondary);
-      font-size: 1.2rem;
-      transition: color 0.3s;
+      font-size: 1.3rem;
+      transition: color 0.3s, transform 0.3s;
     }
 
     .project-links a:hover {
       color: var(--primary);
+      transform: translateY(-3px);
     }
 
     /* Skills Section */
     .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
     .skills-category {
       background-color: var(--card-bg);
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid var(--border);
-      padding: 1.5rem;
-      transition: transform 0.3s, border-color 0.3s;
+      padding: 1.8rem;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .skills-category:hover {
       transform: translateY(-5px);
       border-color: var(--primary);
+      box-shadow: var(--shadow);
     }
 
     .skills-category h3 {
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
     }
 
     .skills-list {
@@ -440,80 +538,95 @@
     }
 
     .skills-list li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
+      color: var(--text-secondary);
+      transition: transform 0.2s;
+    }
+
+    .skills-list li:hover {
+      transform: translateX(5px);
+      color: var(--text);
     }
 
     .skills-list li::before {
       content: '▹';
       color: var(--primary);
-      margin-right: 0.5rem;
+      margin-right: 0.8rem;
     }
 
     /* Education, Certifications & Awards */
     .education-grid, .certifications-grid, .awards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
     .education-card, .certification-card, .award-card {
       background-color: var(--card-bg);
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid var(--border);
-      padding: 1.5rem;
-      transition: transform 0.3s, border-color 0.3s;
+      padding: 1.8rem;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .education-card:hover, .certification-card:hover, .award-card:hover {
       transform: translateY(-5px);
       border-color: var(--primary);
+      box-shadow: var(--shadow);
     }
 
     .education-date, .certification-date, .award-date {
       color: var(--primary);
       font-size: 0.9rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
     }
 
     .education-degree, .certification-name, .award-name {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
     }
 
     .education-institution, .certification-issuer, .award-issuer {
       color: var(--text-secondary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      font-style: italic;
     }
 
     /* Footer */
     footer {
-      padding: 3rem 0;
+      padding: 4rem 0;
       text-align: center;
       border-top: 1px solid var(--border);
+      background-color: rgba(10, 25, 47, 0.8);
     }
 
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .footer-links a {
       color: var(--text);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       transition: color 0.3s, transform 0.3s;
     }
 
     .footer-links a:hover {
       color: var(--primary);
-      transform: translateY(-3px);
+      transform: translateY(-5px);
     }
 
     .footer-text {
       color: var(--text-secondary);
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
     }
 
     /* Tech Background Animation */
@@ -524,6 +637,40 @@
       width: 100%;
       height: 100%;
       z-index: -1;
+    }
+
+    /* GitHub Corner */
+    .github-corner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 101;
+    }
+
+    .github-corner svg {
+      fill: var(--primary);
+      color: var(--background);
+      width: 80px;
+      height: 80px;
+      transition: transform 0.3s;
+    }
+
+    .github-corner:hover svg {
+      transform: scale(1.1);
+    }
+
+    .github-corner .octo-arm {
+      transform-origin: 130px 106px;
+    }
+
+    .github-corner:hover .octo-arm {
+      animation: octocat-wave 560ms ease-in-out;
+    }
+
+    @keyframes octocat-wave {
+      0%, 100% { transform: rotate(0); }
+      20%, 60% { transform: rotate(-25deg); }
+      40%, 80% { transform: rotate(10deg); }
     }
 
     /* Responsive Design */
@@ -545,6 +692,13 @@
       .right {
         left: 0;
       }
+      .github-corner svg {
+        width: 60px;
+        height: 60px;
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+      }
     }
 
     @media (max-width: 768px) {
@@ -565,6 +719,7 @@
         z-index: 1000;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
       }
       .mobile-nav.active {
         transform: translateX(0);
@@ -579,6 +734,8 @@
         color: var(--text);
         text-decoration: none;
         font-size: 1.2rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
       }
       .close-menu {
         position: absolute;
@@ -607,7 +764,7 @@
         visibility: visible;
       }
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
       .hero h2 {
         font-size: 1.8rem;
@@ -618,11 +775,20 @@
       .projects-grid, .skills-container, .education-grid, .certifications-grid, .awards-grid {
         grid-template-columns: 1fr;
       }
+      .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+      }
+      .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     @media (max-width: 480px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.3rem;
       }
       .hero h2 {
         font-size: 1.5rem;
@@ -634,24 +800,36 @@
         flex-direction: column;
         gap: 1rem;
       }
+      .github-corner svg {
+        width: 50px;
+        height: 50px;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .section-title span {
+        font-size: 1.2rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- GitHub Corner -->
+  <a href="https://github.com/rajajawadahmed/AI_LMS" class="github-corner" aria-label="View source on GitHub" target="_blank">
+    <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" class="octo-arm"></path>
+      <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+  </a>
+
   <!-- Header -->
   <header>
     <div class="container">
       <nav>
-        <div class="logo">
-          <!-- Replace this with your actual logo -->
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="40" height="40" rx="8" fill="#0A192F"/>
-            <path d="M12 20C12 15.5817 15.5817 12 20 12C24.4183 12 28 15.5817 28 20C28 24.4183 24.4183 28 20 28" stroke="#00CCFF" stroke-width="2" stroke-linecap="round"/>
-            <path d="M20 28C17.7909 28 16 26.2091 16 24C16 21.7909 17.7909 20 20 20C22.2091 20 24 21.7909 24 24C24 26.2091 22.2091 28 20 28Z" stroke="#00CCFF" stroke-width="2"/>
-            <path d="M20 20V12" stroke="#00CCFF" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <span>JA</span>
-        </div>
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
@@ -716,9 +894,9 @@
             <span>Islamabad, Pakistan</span>
           </div>
         </div>
-        <div style="margin-top: 2rem;">
+        <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn" style="margin-left: 1rem;">Contact Me</a>
+          <a href="#contact" class="btn">Contact Me</a>
         </div>
       </div>
     </div>
@@ -728,11 +906,11 @@
   <section id="about" class="about">
     <div class="container">
       <h2 class="section-title"><span>01.</span> About Me</h2>
-      <div style="max-width: 800px;">
-        <p style="margin-bottom: 1.5rem;">
+      <div class="about-content">
+        <p>
           I'm an AI/ML Engineer with hands-on experience developing advanced AI systems for real-time analysis and implementing large language models (LLMs) across diverse applications. Currently at PIE Technologies, I work with computer vision, natural language processing, and voice analysis to create high-performance, AI-driven solutions.
         </p>
-        <p style="margin-bottom: 1.5rem;">
+        <p>
           Proficient in Python, Keras, TensorFlow, PyTorch and OpenCV, and certified as an IT Specialist in Artificial Intelligence from Pearson, I am committed to building practical AI tools that address real-world challenges and continuously expanding my expertise in the field.
         </p>
         <p>
@@ -797,8 +975,8 @@
             <span class="skill-tag">NLP</span>
           </div>
           <div class="project-links">
-            <a href="#" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Smart_Interview_System" title="GitHub Repository" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Smart_Interview_System" title="Live Demo" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
 
@@ -822,8 +1000,8 @@
             <span class="skill-tag">Deep Learning</span>
           </div>
           <div class="project-links">
-            <a href="#" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="#" title="Research Paper"><i class="fas fa-file-alt"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Medical_Disease_Detection" title="GitHub Repository" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Medical_Disease_Detection" title="Research Paper" target="_blank"><i class="fas fa-file-alt"></i></a>
           </div>
         </div>
 
@@ -847,9 +1025,9 @@
             <span class="skill-tag">Robotics</span>
             <span class="skill-tag">Object Detection</span>
           </div>
-          <div class="https://drive.google.com/file/d/1XGyggY-QlzyywcPpQjWf1DX_Z6CvqpLc/view?usp=drive_link">
-            <a href="#" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="#" title="Demo Video"><i class="fas fa-video"></i></a>
+          <div class="project-links">
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Object_Detection_Robot" title="GitHub Repository" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://drive.google.com/file/d/1XGyggY-QlzyywcPpQjWf1DX_Z6CvqpLc/view?usp=drive_link" title="Demo Video" target="_blank"><i class="fas fa-video"></i></a>
           </div>
         </div>
 
@@ -874,8 +1052,8 @@
             <span class="skill-tag">Sentiment Analysis</span>
           </div>
           <div class="project-links">
-            <a href="#" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Sentiment_Analysis" title="GitHub Repository" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Sentiment_Analysis" title="Live Demo" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
 
@@ -900,8 +1078,8 @@
             <span class="skill-tag">Predictive Analytics</span>
           </div>
           <div class="project-links">
-            <a href="#" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="#" title="Case Study"><i class="fas fa-file-alt"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Predictive_Maintenance" title="GitHub Repository" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/rajajawadahmed/AI_LMS/tree/main/Predictive_Maintenance" title="Case Study" target="_blank"><i class="fas fa-file-alt"></i></a>
           </div>
         </div>
       </div>
@@ -1069,6 +1247,7 @@
       <div class="footer-links">
         <a href="mailto:raja.jawadahmed1@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://linkedin.com/in/jawad-ahmed-183039279" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/rajajawadahmed" target="_blank"><i class="fab fa-github"></i></a>
         <a href="tel:+923168505903"><i class="fas fa-phone"></i></a>
       </div>
       <p class="footer-text">© 2024 Jawad Ahmed. All rights reserved.</p>
