@@ -5,26 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jawad Ahmed - AI/ML Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #00ccff;
       --primary-dark: #00a0b7;
       --secondary: #0a192f;
-      --accent: #ff3366;
-      --accent2: #7928ca;
-      --accent3: #00ff9d;
-      --text: #ffffff;
-      --text-secondary: #b8c2d0;
-      --background: #0f0f1a;
-      --card-bg: #1a1a2e;
-      --border: #2a2a4a;
+      --text: #e6f1ff;
+      --text-secondary: #8892b0;
+      --background: #0a192f;
+      --card-bg: #112240;
+      --border: #1e3a5f;
       --highlight: rgba(0, 204, 255, 0.1);
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      --gradient1: linear-gradient(45deg, #00ccff, #7928ca);
-      --gradient2: linear-gradient(45deg, #ff3366, #ff8866);
-      --gradient3: linear-gradient(45deg, #00ff9d, #00ccff);
-      --ai-gradient: linear-gradient(45deg, #00ccff, #7928ca, #00ff9d);
     }
 
     * {
@@ -34,7 +27,7 @@
     }
 
     body {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: var(--background);
       color: var(--text);
       line-height: 1.6;
@@ -45,8 +38,6 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
-      position: relative;
-      z-index: 2;
     }
 
     /* Header */
@@ -55,9 +46,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: rgba(15, 15, 26, 0.95);
+      background-color: rgba(10, 25, 47, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(42, 42, 74, 0.3);
+      border-bottom: 1px solid rgba(30, 58, 95, 0.3);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
@@ -81,26 +72,10 @@
       font-size: 0.95rem;
       letter-spacing: 0.5px;
       padding: 0.5rem 0;
-      text-transform: uppercase;
-      font-family: 'JetBrains Mono', monospace;
     }
 
     .nav-links a:hover {
       color: var(--primary);
-    }
-
-    .nav-links a::before {
-      content: '>';
-      color: var(--accent3);
-      margin-right: 5px;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover::before {
-      opacity: 1;
-      transform: translateX(0);
     }
 
     .nav-links a::after {
@@ -110,7 +85,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background: var(--gradient3);
+      background-color: var(--primary);
       transition: width 0.3s ease;
     }
 
@@ -143,45 +118,26 @@
     }
 
     .hero-subtitle {
-      color: var(--accent3);
+      color: var(--primary);
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
       display: block;
       font-weight: 500;
       letter-spacing: 1px;
       animation: fadeInUp 0.8s ease;
-      text-transform: uppercase;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .hero-subtitle::before {
-      content: '// ';
-      color: var(--primary);
     }
 
     .hero h1 {
-      font-size: 5rem;
+      font-size: 4.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
       line-height: 1.1;
       animation: fadeInUp 1s ease;
-      background: var(--ai-gradient);
+      background: linear-gradient(to right, var(--text), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      letter-spacing: -1px;
-      position: relative;
-    }
-
-    .hero h1::after {
-      content: '';
-      position: absolute;
-      width: 100px;
-      height: 5px;
-      background: var(--gradient3);
-      bottom: -10px;
-      left: 0;
     }
 
     .hero h2 {
@@ -190,26 +146,6 @@
       font-weight: 600;
       margin-bottom: 2rem;
       animation: fadeInUp 1.2s ease;
-      position: relative;
-      display: inline-block;
-    }
-
-    .hero h2::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: var(--gradient1);
-      bottom: -5px;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: scaleIn 1.5s ease forwards;
-      animation-delay: 1.2s;
-    }
-
-    @keyframes scaleIn {
-      to { transform: scaleX(1); }
     }
 
     .hero-description {
@@ -219,9 +155,6 @@
       max-width: 600px;
       line-height: 1.8;
       animation: fadeInUp 1.4s ease;
-      position: relative;
-      padding-left: 15px;
-      border-left: 2px solid var(--accent);
     }
 
     .contact-info {
@@ -238,34 +171,11 @@
       gap: 0.8rem;
       color: var(--text-secondary);
       transition: transform 0.3s, color 0.3s;
-      position: relative;
-      padding: 8px 15px;
-      border-radius: 30px;
-      background: rgba(42, 42, 74, 0.3);
-      backdrop-filter: blur(5px);
-    }
-
-    .contact-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 30px;
-      background: var(--gradient1);
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: -1;
     }
 
     .contact-item:hover {
-      color: var(--text);
+      color: var(--primary);
       transform: translateY(-3px);
-    }
-
-    .contact-item:hover::before {
-      opacity: 0.2;
     }
 
     .contact-item i {
@@ -291,7 +201,7 @@
       color: var(--primary);
       border: 1px solid var(--primary);
       padding: 0.9rem 1.8rem;
-      border-radius: 30px;
+      border-radius: 4px;
       font-weight: 500;
       text-decoration: none;
       transition: all 0.3s;
@@ -300,8 +210,6 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
-      text-transform: uppercase;
-      font-family: 'JetBrains Mono', monospace;
     }
 
     .btn::before {
@@ -311,14 +219,13 @@
       left: 0;
       width: 0%;
       height: 100%;
-      background: var(--gradient1);
+      background-color: var(--primary);
       transition: all 0.3s;
       z-index: -1;
     }
 
     .btn:hover {
-      color: var(--text);
-      border-color: transparent;
+      color: var(--secondary);
     }
 
     .btn:hover::before {
@@ -326,13 +233,12 @@
     }
 
     .btn-primary {
-      background: var(--gradient1);
-      color: var(--text);
-      border: none;
+      background-color: var(--primary);
+      color: var(--secondary);
     }
 
     .btn-primary::before {
-      background: var(--gradient3);
+      background-color: var(--primary-dark);
     }
 
     @keyframes fadeInUp {
@@ -349,7 +255,6 @@
     /* About Section */
     section {
       padding: 6rem 0;
-      position: relative;
     }
 
     .section-title {
@@ -358,34 +263,19 @@
       display: flex;
       align-items: center;
       position: relative;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .section-title::before {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: -30px;
-      font-size: 4rem;
-      opacity: 0.05;
-      font-weight: 900;
-      white-space: nowrap;
-      text-transform: uppercase;
     }
 
     .section-title::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: var(--gradient3);
+      background-color: var(--border);
       margin-left: 1.5rem;
       opacity: 0.7;
     }
 
     .section-title span {
-      color: var(--accent3);
+      color: var(--primary);
       margin-right: 0.8rem;
       font-weight: 600;
       font-size: 1.5rem;
@@ -394,24 +284,11 @@
     .about-content {
       max-width: 800px;
       line-height: 1.8;
-      position: relative;
     }
 
     .about-content p {
       margin-bottom: 1.8rem;
       color: var(--text-secondary);
-      position: relative;
-      padding-left: 15px;
-    }
-
-    .about-content p::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background: var(--gradient1);
     }
 
     /* Experience Section */
@@ -425,7 +302,7 @@
       content: '';
       position: absolute;
       width: 2px;
-      background: var(--gradient3);
+      background-color: var(--border);
       top: 0;
       bottom: 0;
       left: 50%;
@@ -445,11 +322,11 @@
       position: absolute;
       width: 20px;
       height: 20px;
-      background-color: var(--accent3);
+      background-color: var(--primary);
       border-radius: 50%;
       top: 15px;
       z-index: 1;
-      box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+      box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
     }
 
     .left {
@@ -471,47 +348,30 @@
     .timeline-content {
       padding: 1.8rem;
       background-color: var(--card-bg);
-      border-radius: 10px;
+      border-radius: 8px;
       border: 1px solid var(--border);
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    .timeline-content::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" /><path d="M0,0 L100,100 M0,100 L100,0" stroke="rgba(0,204,255,0.05)" stroke-width="1" /></svg>');
-      opacity: 0.5;
-      z-index: 0;
     }
 
     .timeline-content:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow);
-      border-image: var(--gradient3) 1;
     }
 
     .timeline-date {
-      color: var(--accent3);
+      color: var(--primary);
       font-weight: 600;
       margin-bottom: 0.8rem;
       display: block;
       font-size: 1rem;
-      font-family: 'JetBrains Mono', monospace;
     }
 
     .timeline-title {
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
       color: var(--text);
-      position: relative;
-      z-index: 1;
     }
 
     .timeline-subtitle {
@@ -519,30 +379,16 @@
       font-size: 1rem;
       margin-bottom: 1.2rem;
       font-style: italic;
-      position: relative;
-      z-index: 1;
     }
 
     .timeline-description {
       margin-bottom: 1.2rem;
       color: var(--text-secondary);
-      position: relative;
-      z-index: 1;
     }
 
     .timeline-description li {
       margin-bottom: 0.8rem;
       list-style-position: inside;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .timeline-description li::before {
-      content: '>';
-      position: absolute;
-      left: 0;
-      color: var(--accent3);
-      font-family: 'JetBrains Mono', monospace;
     }
 
     .skills-used {
@@ -550,42 +396,20 @@
       flex-wrap: wrap;
       gap: 0.6rem;
       margin-top: 1.2rem;
-      position: relative;
-      z-index: 1;
     }
 
     .skill-tag {
       background-color: var(--highlight);
       color: var(--primary);
       padding: 0.4rem 0.8rem;
-      border-radius: 20px;
+      border-radius: 4px;
       font-size: 0.8rem;
       transition: transform 0.2s, background-color 0.2s;
-      position: relative;
-      overflow: hidden;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .skill-tag::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient1);
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: -1;
     }
 
     .skill-tag:hover {
       transform: translateY(-2px);
-      color: var(--text);
-    }
-
-    .skill-tag:hover::before {
-      opacity: 0.8;
+      background-color: rgba(0, 204, 255, 0.2);
     }
 
     /* Projects Section */
@@ -605,43 +429,12 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--gradient3);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s ease;
-    }
-
-    .project-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100px;
-      height: 100px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="rgba(0,204,255,0.1)" stroke-width="1" fill="none" /><circle cx="50" cy="50" r="30" stroke="rgba(0,204,255,0.1)" stroke-width="1" fill="none" /><circle cx="50" cy="50" r="20" stroke="rgba(0,204,255,0.1)" stroke-width="1" fill="none" /></svg>');
-      opacity: 0.5;
-      z-index: 0;
-    }
-
-    .project-card:hover::before {
-      transform: scaleX(1);
     }
 
     .project-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow);
-      border-color: var(--accent3);
+      border-color: var(--primary);
     }
 
     .project-header {
@@ -649,39 +442,16 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
     }
 
     .project-icon {
       font-size: 2.2rem;
-      color: var(--accent3);
+      color: var(--primary);
       transition: transform 0.3s;
-      position: relative;
-    }
-
-    .project-icon::after {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: var(--accent3);
-      opacity: 0.1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s;
     }
 
     .project-card:hover .project-icon {
       transform: scale(1.1);
-    }
-
-    .project-card:hover .project-icon::after {
-      width: 40px;
-      height: 40px;
-      opacity: 0.2;
     }
 
     .project-title {
@@ -689,15 +459,6 @@
       margin-bottom: 1.2rem;
       color: var(--text);
       letter-spacing: 0.5px;
-      position: relative;
-      z-index: 1;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .project-title::before {
-      content: '// ';
-      color: var(--accent3);
-      font-size: 1rem;
     }
 
     .project-description {
@@ -706,8 +467,6 @@
       flex-grow: 1;
       font-size: 0.95rem;
       line-height: 1.7;
-      position: relative;
-      z-index: 1;
     }
 
     .project-description ul {
@@ -716,16 +475,6 @@
 
     .project-description li {
       margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .project-description li::before {
-      content: '>';
-      position: absolute;
-      left: 0;
-      color: var(--accent3);
-      font-family: 'JetBrains Mono', monospace;
     }
 
     .project-tags {
@@ -733,47 +482,23 @@
       flex-wrap: wrap;
       gap: 0.6rem;
       margin-top: auto;
-      position: relative;
-      z-index: 1;
     }
 
     .project-links {
       display: flex;
       gap: 1.2rem;
       margin-top: 1.5rem;
-      position: relative;
-      z-index: 1;
     }
 
     .project-links a {
       color: var(--text-secondary);
       font-size: 1.3rem;
       transition: color 0.3s, transform 0.3s;
-      position: relative;
-    }
-
-    .project-links a::before {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: var(--gradient1);
-      opacity: 0;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s;
-      z-index: -1;
     }
 
     .project-links a:hover {
-      color: var(--text);
+      color: var(--primary);
       transform: translateY(-3px);
-    }
-
-    .project-links a:hover::before {
-      opacity: 0.2;
     }
 
     /* Skills Section */
@@ -790,67 +515,26 @@
       padding: 1.8rem;
       transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skills-category::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: var(--gradient3);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.5s ease;
-    }
-
-    .skills-category::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none" /><path d="M20,20 L180,20 M20,60 L180,60 M20,100 L180,100 M20,140 L180,140 M20,180 L180,180" stroke="rgba(0,204,255,0.03)" stroke-width="1" /></svg>');
-      opacity: 0.5;
-      z-index: 0;
-    }
-
-    .skills-category:hover::before {
-      transform: scaleY(1);
     }
 
     .skills-category:hover {
       transform: translateY(-5px);
-      border-color: var(--accent3);
+      border-color: var(--primary);
       box-shadow: var(--shadow);
     }
 
     .skills-category h3 {
-      color: var(--accent3);
+      color: var(--primary);
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.8rem;
       font-size: 1.2rem;
       letter-spacing: 0.5px;
-      position: relative;
-      z-index: 1;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .skills-category h3::before {
-      content: '// ';
-      color: var(--primary);
     }
 
     .skills-list {
       list-style: none;
-      position: relative;
-      z-index: 1;
     }
 
     .skills-list li {
@@ -858,17 +542,6 @@
       display: flex;
       align-items: center;
       color: var(--text-secondary);
-      transition: transform 0.2s, color 0.2s;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .skills-list li::before {
-      content: '>';
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-family: 'JetBrains Mono', monospace;
       transition: transform 0.2s;
     }
 
@@ -877,9 +550,10 @@
       color: var(--text);
     }
 
-    .skills-list li:hover::before {
-      transform: translateX(3px);
-      color: var(--accent3);
+    .skills-list li::before {
+      content: '▹';
+      color: var(--primary);
+      margin-right: 0.8rem;
     }
 
     /* Education, Certifications & Awards */
@@ -896,70 +570,31 @@
       padding: 1.8rem;
       transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .education-card::before, .certification-card::before, .award-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 50px 50px 0;
-      border-color: transparent var(--accent3) transparent transparent;
-      opacity: 0.1;
-      transition: opacity 0.3s;
-    }
-
-    .education-card::after, .certification-card::after, .award-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none" /><circle cx="20" cy="20" r="5" fill="rgba(0,204,255,0.05)" /><circle cx="60" cy="20" r="5" fill="rgba(0,204,255,0.05)" /><circle cx="100" cy="20" r="5" fill="rgba(0,204,255,0.05)" /><circle cx="140" cy="20" r="5" fill="rgba(0,204,255,0.05)" /><circle cx="180"  /><circle cx="140" cy="20" r="5" fill="rgba(0,204,255,0.05)" /><circle cx="180" cy="20" r="5" fill="rgba(0,204,255,0.05)" /></svg>');
-      opacity: 0.3;
-      z-index: 0;
-    }
-
-    .education-card:hover::before, .certification-card:hover::before, .award-card:hover::before {
-      opacity: 0.2;
     }
 
     .education-card:hover, .certification-card:hover, .award-card:hover {
       transform: translateY(-5px);
-      border-color: var(--accent3);
+      border-color: var(--primary);
       box-shadow: var(--shadow);
     }
 
     .education-date, .certification-date, .award-date {
-      color: var(--accent3);
+      color: var(--primary);
       font-size: 0.9rem;
       margin-bottom: 0.8rem;
       font-weight: 500;
-      font-family: 'JetBrains Mono', monospace;
-      position: relative;
-      z-index: 1;
     }
 
     .education-degree, .certification-name, .award-name {
       font-size: 1.3rem;
       margin-bottom: 0.8rem;
       color: var(--text);
-      position: relative;
-      z-index: 1;
     }
 
     .education-institution, .certification-issuer, .award-issuer {
       color: var(--text-secondary);
       margin-bottom: 1.2rem;
       font-style: italic;
-      position: relative;
-      z-index: 1;
     }
 
     /* Footer */
@@ -967,21 +602,7 @@
       padding: 4rem 0;
       text-align: center;
       border-top: 1px solid var(--border);
-      background-color: rgba(15, 15, 26, 0.8);
-      position: relative;
-      overflow: hidden;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" /><path d="M0,50 L100,50 M50,0 L50,100" stroke="rgba(0,204,255,0.03)" stroke-width="1" /></svg>');
-      opacity: 0.5;
-      z-index: 0;
+      background-color: rgba(10, 25, 47, 0.8);
     }
 
     .footer-links {
@@ -989,52 +610,27 @@
       justify-content: center;
       gap: 2.5rem;
       margin-bottom: 2.5rem;
-      position: relative;
-      z-index: 1;
     }
 
     .footer-links a {
       color: var(--text);
       font-size: 1.6rem;
       transition: color 0.3s, transform 0.3s;
-      position: relative;
-    }
-
-    .footer-links a::before {
-      content: '';
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--gradient3);
-      opacity: 0;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s;
-      z-index: -1;
     }
 
     .footer-links a:hover {
-      color: var(--text);
+      color: var(--primary);
       transform: translateY(-5px);
-    }
-
-    .footer-links a:hover::before {
-      opacity: 0.2;
     }
 
     .footer-text {
       color: var(--text-secondary);
       font-size: 0.9rem;
       letter-spacing: 0.5px;
-      position: relative;
-      z-index: 1;
-      font-family: 'JetBrains Mono', monospace;
     }
 
-    /* AI Neural Network Background Animation */
-    #ai-canvas {
+    /* Tech Background Animation */
+    #tech-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -1052,7 +648,7 @@
     }
 
     .github-corner svg {
-      fill: var(--accent3);
+      fill: var(--primary);
       color: var(--background);
       width: 80px;
       height: 80px;
@@ -1075,18 +671,6 @@
       0%, 100% { transform: rotate(0); }
       20%, 60% { transform: rotate(-25deg); }
       40%, 80% { transform: rotate(10deg); }
-    }
-
-    /* Data Visualization */
-    .data-visualization {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 200px;
-      opacity: 0.1;
-      pointer-events: none;
-      z-index: 0;
     }
 
     /* Responsive Design */
@@ -1152,11 +736,6 @@
         font-size: 1.2rem;
         padding: 0.5rem 0;
         border-bottom: 1px solid var(--border);
-        font-family: 'JetBrains Mono', monospace;
-      }
-      .mobile-nav-links a::before {
-        content: '> ';
-        color: var(--accent3);
       }
       .close-menu {
         position: absolute;
@@ -1284,14 +863,14 @@
     </div>
   </div>
 
-  <!-- AI Neural Network Background Canvas -->
-  <canvas id="ai-canvas"></canvas>
+  <!-- Tech Background Canvas -->
+  <canvas id="tech-canvas"></canvas>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <span class="hero-subtitle">initializing AI systems</span>
+        <span class="hero-subtitle">Hello, my name is</span>
         <h1>Jawad Ahmed</h1>
         <h2>AI/ML Engineer</h2>
         <p class="hero-description">
@@ -1326,13 +905,16 @@
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <h2 class="section-title" data-text="About"><span>01.</span> About Me</h2>
+      <h2 class="section-title"><span>01.</span> About Me</h2>
       <div class="about-content">
         <p>
           I'm an AI/ML Engineer with hands-on experience developing advanced AI systems for real-time analysis and implementing large language models (LLMs) across diverse applications. Currently at PIE Technologies, I work with computer vision, natural language processing, and voice analysis to create high-performance, AI-driven solutions.
         </p>
         <p>
           Proficient in Python, Keras, TensorFlow, PyTorch and OpenCV, and certified as an IT Specialist in Artificial Intelligence from Pearson, I am committed to building practical AI tools that address real-world challenges and continuously expanding my expertise in the field.
+        </p>
+        <p>
+          My passion lies in developing intelligent systems that can solve complex problems and make a positive impact. I enjoy working on projects that combine multiple AI disciplines, from computer vision to natural language processing, to create comprehensive solutions.
         </p>
       </div>
     </div>
@@ -1341,12 +923,12 @@
   <!-- Experience Section -->
   <section id="experience" class="experience">
     <div class="container">
-      <h2 class="section-title" data-text="Experience"><span>02.</span> Experience</h2>
+      <h2 class="section-title"><span>02.</span> Experience</h2>
       <div class="timeline">
         <div class="timeline-item right">
           <div class="timeline-content">
-            <span class="timeline-date">04/2024 - Present</span>
-            <h3 class="timeline-title">Associate AI Engineer</h3>
+            <span class="timeline-date">07/2024 - Present</span>
+            <h3 class="timeline-title">AI & ML Engineer</h3>
             <h4 class="timeline-subtitle">Pie-Technologies, Islamabad, Pakistan</h4>
             <ul class="timeline-description">
               <li>Successfully contributed in development and implementation of large language models (LLMs) for various applications, ensuring high performance and accuracy.</li>
@@ -1370,14 +952,14 @@
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="container">
-      <h2 class="section-title" data-text="Projects"><span>03.</span> Projects</h2>
+      <h2 class="section-title"><span>03.</span> Projects</h2>
       <div class="projects-grid">
         <!-- Project 1 -->
         <div class="project-card">
           <div class="project-header">
             <i class="fas fa-comments project-icon"></i>
           </div>
-          <h3 class="project-title">Smart Interview System</h3>
+          <h3 class="project-title">Smart Interview System (AI)</h3>
           <div class="project-description">
             <ul>
               <li>Developed an AI-driven interview system that combines Computer Vision and LLMs to assess candidate performance.</li>
@@ -1403,7 +985,7 @@
           <div class="project-header">
             <i class="fas fa-brain project-icon"></i>
           </div>
-          <h3 class="project-title">Medical Disease Detection System</h3>
+          <h3 class="project-title">Medical Disease Detection System using CNN (AI)</h3>
           <div class="project-description">
             <ul>
               <li>Utilized CNNs with multiple convolutional layers for classifying Skin Diseases and Brain Tumors.</li>
@@ -1428,7 +1010,7 @@
           <div class="project-header">
             <i class="fas fa-robot project-icon"></i>
           </div>
-          <h3 class="project-title">AI-Based Object Detection Robot</h3>
+          <h3 class="project-title">AI-Based Object Detection Robot (AI)</h3>
           <div class="project-description">
             <ul>
               <li>Developed an AI-based object detection robotic car using the Arduino Uno microcontroller, AMB82 Mini module, and YOLO object detection algorithm in Python.</li>
@@ -1454,7 +1036,7 @@
           <div class="project-header">
             <i class="fas fa-language project-icon"></i>
           </div>
-          <h3 class="project-title">Multilingual Sentiment Analysis</h3>
+          <h3 class="project-title">Multilingual Sentiment Analysis System</h3>
           <div class="project-description">
             <ul>
               <li>Developed a multilingual sentiment analysis system capable of processing text in English, Urdu, and Hindi.</li>
@@ -1507,7 +1089,7 @@
   <!-- Skills Section -->
   <section id="skills" class="skills">
     <div class="container">
-      <h2 class="section-title" data-text="Skills"><span>04.</span> Skills</h2>
+      <h2 class="section-title"><span>04.</span> Skills</h2>
       <div class="skills-container">
         <!-- AI & ML Skills -->
         <div class="skills-category">
@@ -1570,7 +1152,7 @@
   <!-- Education Section -->
   <section id="education" class="education">
     <div class="container">
-      <h2 class="section-title" data-text="Education"><span>05.</span> Education</h2>
+      <h2 class="section-title"><span>05.</span> Education</h2>
       <div class="education-grid">
         <!-- Education -->
         <div class="education-card">
@@ -1598,7 +1180,7 @@
   <!-- Certifications Section -->
   <section id="certifications" class="certifications">
     <div class="container">
-      <h2 class="section-title" data-text="Certifications"><span>06.</span> Certifications</h2>
+      <h2 class="section-title"><span>06.</span> Certifications</h2>
       <div class="certifications-grid">
         <!-- IT Specialist Certificate -->
         <div class="certification-card">
@@ -1630,7 +1212,7 @@
   <!-- Awards Section -->
   <section id="awards" class="awards">
     <div class="container">
-      <h2 class="section-title" data-text="Awards"><span>07.</span> Awards & Achievements</h2>
+      <h2 class="section-title"><span>07.</span> Awards & Achievements</h2>
       <div class="awards-grid">
         <!-- Award 1 -->
         <div class="award-card">
@@ -1698,201 +1280,123 @@
       link.addEventListener('click', closeMenu);
     });
 
-    // AI Neural Network Animation
-    const canvas = document.getElementById('ai-canvas');
+    // Tech Background Animation
+    const canvas = document.getElementById('tech-canvas');
     const ctx = canvas.getContext('2d');
-
+    
     // Set canvas dimensions
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
-
+    
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
-
-    // Neural Network Animation
-    class NeuralNetworkAnimation {
+    
+    // Binary particles
+    class Particle {
       constructor() {
-        this.nodes = [];
-        this.connections = [];
-        this.dataFlows = [];
-        this.initialize();
+        this.reset();
       }
-
-      initialize() {
-        // Create neural network nodes
-        const nodeCount = 50;
-        for (let i = 0; i < nodeCount; i++) {
-          this.nodes.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 3 + 2,
-            color: i % 3 === 0 ? '#00ccff' : (i % 3 === 1 ? '#7928ca' : '#00ff9d'),
-            opacity: Math.random() * 0.5 + 0.3,
-            velocityX: (Math.random() - 0.5) * 0.3,
-            velocityY: (Math.random() - 0.5) * 0.3
-          });
-        }
-
-        // Create connections between nodes
-        for (let i = 0; i < nodeCount; i++) {
-          const connectionsCount = Math.floor(Math.random() * 3) + 1;
-          for (let j = 0; j < connectionsCount; j++) {
-            const targetNode = Math.floor(Math.random() * nodeCount);
-            if (i !== targetNode) {
-              this.connections.push({
-                source: i,
-                target: targetNode,
-                opacity: Math.random() * 0.2 + 0.05,
-                pulseSpeed: Math.random() * 0.02 + 0.01,
-                pulsePhase: Math.random() * Math.PI * 2
-              });
-            }
-          }
-        }
-
-        // Create data flows
-        const dataFlowCount = 30;
-        for (let i = 0; i < dataFlowCount; i++) {
-          const sourceIndex = Math.floor(Math.random() * nodeCount);
-          const targetIndex = Math.floor(Math.random() * nodeCount);
-          if (sourceIndex !== targetIndex) {
-            this.dataFlows.push({
-              sourceIndex: sourceIndex,
-              targetIndex: targetIndex,
-              position: 0,
-              speed: Math.random() * 0.01 + 0.005,
-              color: i % 3 === 0 ? '#00ccff' : (i % 3 === 1 ? '#7928ca' : '#00ff9d'),
-              size: Math.random() * 2 + 1
-            });
-          }
-        }
+      
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.text = Math.random() > 0.5 ? "1" : "0";
+        this.opacity = Math.random() * 0.5 + 0.1;
+        this.color = "#00ccff";
       }
-
+      
       update() {
-        // Update nodes
-        for (const node of this.nodes) {
-          node.x += node.velocityX;
-          node.y += node.velocityY;
-
-          // Bounce off edges
-          if (node.x < node.radius || node.x > canvas.width - node.radius) {
-            node.velocityX *= -1;
-          }
-          if (node.y < node.radius || node.y > canvas.height - node.radius) {
-            node.velocityY *= -1;
-          }
-        }
-
-        // Update connections
-        for (const connection of this.connections) {
-          connection.pulsePhase += connection.pulseSpeed;
-          if (connection.pulsePhase > Math.PI * 2) {
-            connection.pulsePhase = 0;
-          }
-        }
-
-        // Update data flows
-        for (const flow of this.dataFlows) {
-          flow.position += flow.speed;
-          if (flow.position > 1) {
-            flow.position = 0;
-            // Change target
-            flow.sourceIndex = flow.targetIndex;
-            flow.targetIndex = Math.floor(Math.random() * this.nodes.length);
-          }
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.reset();
         }
       }
-
+      
       draw() {
-        // Draw connections
-        for (const connection of this.connections) {
-          const source = this.nodes[connection.source];
-          const target = this.nodes[connection.target];
-          
-          const pulseOpacity = (Math.sin(connection.pulsePhase) + 1) / 2 * connection.opacity;
-          
-          ctx.beginPath();
-          ctx.moveTo(source.x, source.y);
-          ctx.lineTo(target.x, target.y);
-          ctx.strokeStyle = `rgba(0, 204, 255, ${pulseOpacity})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-
-        // Draw data flows
-        for (const flow of this.dataFlows) {
-          const source = this.nodes[flow.sourceIndex];
-          const target = this.nodes[flow.targetIndex];
-          
-          const x = source.x + (target.x - source.x) * flow.position;
-          const y = source.y + (target.y - source.y) * flow.position;
-          
-          ctx.beginPath();
-          ctx.arc(x, y, flow.size, 0, Math.PI * 2);
-          ctx.fillStyle = flow.color;
-          ctx.globalAlpha = 0.7;
-          ctx.fill();
-        }
-
-        // Draw nodes
-        for (const node of this.nodes) {
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-          ctx.fillStyle = node.color;
-          ctx.globalAlpha = node.opacity;
-          ctx.fill();
-        }
-
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.font = `${this.size * 8}px monospace`;
+        ctx.fillText(this.text, this.x, this.y);
         ctx.globalAlpha = 1;
       }
     }
-
-    // Create neural network animation
-    const neuralNetworkAnimation = new NeuralNetworkAnimation();
-
-    // Mouse interaction
-    let mouseX = 0;
-    let mouseY = 0;
-    let mouseActive = false;
-
-    canvas.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-      mouseActive = true;
-
-      // Add nodes at mouse position
-      if (Math.random() < 0.05) {
-        neuralNetworkAnimation.nodes.push({
-          x: mouseX,
-          y: mouseY,
-          radius: Math.random() * 3 + 2,
-          color: Math.random() < 0.33 ? '#00ccff' : (Math.random() < 0.66 ? '#7928ca' : '#00ff9d'),
-          opacity: Math.random() * 0.5 + 0.3,
-          velocityX: (Math.random() - 0.5) * 0.5,
-          velocityY: (Math.random() - 0.5) * 0.5
-        });
+    
+    // Create particles
+    const particles = [];
+    const particleCount = 100;
+    
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+    
+    // Create connection lines
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 150) {
+            ctx.beginPath();
+            ctx.strokeStyle = "#00ccff";
+            ctx.globalAlpha = 0.05;
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
       }
-    });
-
-    canvas.addEventListener('mouseleave', () => {
-      mouseActive = false;
-    });
-
+    }
+    
     // Animation loop
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Update and draw neural network animation
-      neuralNetworkAnimation.update();
-      neuralNetworkAnimation.draw();
-
+      
+      // Draw circuit patterns
+      ctx.strokeStyle = "#00ccff";
+      ctx.globalAlpha = 0.03;
+      ctx.lineWidth = 1;
+      
+      // Horizontal lines
+      for (let i = 0; i < canvas.height; i += 50) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.stroke();
+      }
+      
+      // Vertical lines
+      for (let i = 0; i < canvas.width; i += 50) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+      }
+      
+      ctx.globalAlpha = 1;
+      
+      // Update and draw particles
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      // Draw connection lines
+      drawLines();
+      
       requestAnimationFrame(animate);
     }
-
-    // Start animation
+    
     animate();
 
     // Scroll Animation
@@ -1901,7 +1405,7 @@
 
     window.addEventListener('scroll', () => {
       let current = '';
-
+      
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -1917,37 +1421,6 @@
         }
       });
     });
-
-    // Data Visualization for sections
-    function createDataVisualization() {
-      const sections = document.querySelectorAll('section');
-      
-      sections.forEach(section => {
-        const visualization = document.createElement('canvas');
-        visualization.classList.add('data-visualization');
-        visualization.width = 300;
-        visualization.height = 200;
-        
-        const ctx = visualization.getContext('2d');
-        
-        // Draw random data points
-        ctx.strokeStyle = 'rgba(0, 204, 255, 0.3)';
-        ctx.lineWidth = 1;
-        
-        ctx.beginPath();
-        ctx.moveTo(0, 100);
-        
-        for (let i = 0; i < 300; i += 10) {
-          ctx.lineTo(i, 100 + Math.sin(i * 0.05) * 50 * Math.random());
-        }
-        
-        ctx.stroke();
-        
-        section.appendChild(visualization);
-      });
-    }
-    
-    createDataVisualization();
   </script>
 </body>
 </html>
